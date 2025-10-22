@@ -5,15 +5,18 @@ ventana.title("Netflix")
 ventana.geometry("250x400")
 ventana.resizable(False,False)
 
-etiqueta = tk.Label(ventana,text="ingresa nombre de usuario")
-etiqueta.pack()
-ingreso_usuario = tk.Entry(ventana)
+frame1 = tk.Frame(ventana,bg="violet",width= 300 ,height=500,bd=5 ,relief="ridge")
+frame1.pack()
+
+etiqueta = tk.Label(frame1,text="ingresa nombre de usuario",bg="yellow")
+etiqueta.pack(pady=10)
+ingreso_usuario = tk.Entry(frame1)
 ingreso_usuario.pack()
 
-etiqueta = tk.Label(ventana,text="ingresa conteraseña")
-etiqueta.pack()
-ingreso_contrasenia = tk.Entry(ventana)
-ingreso_contrasenia.pack()
+etiqueta = tk.Label(frame1,text="ingresa conteraseña",bg="yellow")
+etiqueta.pack(pady=10)
+ingreso_contrasenia = tk.Entry(frame1)
+ingreso_contrasenia.pack(pady=10)
 
 usuario_correcto = "mati123"
 contrasenia_correcta = "2468"
@@ -27,10 +30,10 @@ def iniciar_sesion ():
     else:
         mensajeBienvenida.config(text=f"acceso denegado")
 
-mensajeBienvenida = tk.Label(ventana) 
+mensajeBienvenida = tk.Label(frame1) 
 mensajeBienvenida.pack()
 
 boton = tk.Button(ventana,text="ingresar",command=iniciar_sesion,bg="green")
 boton.pack()
 
-ventana.mainloop()
+frame1.mainloop()
